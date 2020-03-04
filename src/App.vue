@@ -15,8 +15,10 @@
 </template>
 
 <script>
+import { countLengthComputed } from "./countLengthMixins";
+
 export default {
-  mixins: [],
+  mixins: [countLengthComputed],
   data() {
     return {
       greeting: "Hello",
@@ -25,11 +27,6 @@ export default {
   filters: {
     countLengthFilters(value) {
       return `${value} (${value.length})`;
-    },
-  },
-  computed: {
-    countLengthComputed() {
-      return `${this.greeting} (${this.greeting.length})`;
     },
   },
 };
