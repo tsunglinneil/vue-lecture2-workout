@@ -16,9 +16,11 @@ const routes = [
 ]
 
 // 1. 建立Vue Router Instance，並指派上述定義的routes
+const router = new VueRouter({routes});
 
 // 2. 指派Vue Router Instance至Vue Instance
 new Vue({
   el: '#app',
+  router,
   render: h => h(App)
 })
