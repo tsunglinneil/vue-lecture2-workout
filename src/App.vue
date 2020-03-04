@@ -20,7 +20,7 @@
           <h4>Vuex Workout</h4>
         </div>
         <div class="panel-body">
-          Current Trigger Component:
+          Current Trigger Component: {{ currentTrigger }}
         </div>
       </div>
     </div>
@@ -39,7 +39,12 @@
 import ChildA from "./components/ChildA.vue";
 import ChildB from "./components/ChildB.vue";
 
+import { mapGetters } from "vuex";
+
 export default {
+  computed: {
+    ...mapGetters(["currentTrigger"]),
+  },
   components: {
     appChildA: ChildA,
     appChildB: ChildB,
